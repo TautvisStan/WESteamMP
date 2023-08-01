@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>SteamMultiplayer</AssemblyName>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <ReleaseVersion>1.0.0</ReleaseVersion>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <DebugType>full</DebugType>
+
+        <OutputPath Condition=" '$(SolutionDir)' != '' ">$(SolutionDir)bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+        <OutputPath Condition=" '$(SolutionDir)' == '' ">$(ProjectDir)bin\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+        <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+        <PackageReference Include="UnityEngine.Modules" Version="2020.3.43" IncludeAssets="compile" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>libs\Assembly-CSharp_public.dll</HintPath>
+      </Reference>
+      <Reference Include="com.rlabrecque.steamworks.net">
+        <HintPath>com.rlabrecque.steamworks.net.dll</HintPath>
+      </Reference>
+      <Reference Include="FizzySteamworks">
+        <HintPath>stuff\FizzySteamworks.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror">
+        <HintPath>stuff\Mirror.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror.Authenticators">
+        <HintPath>stuff\Mirror.Authenticators.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror.Components">
+        <HintPath>stuff\Mirror.Components.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror.Transports">
+        <HintPath>stuff\Mirror.Transports.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

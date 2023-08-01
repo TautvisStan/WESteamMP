@@ -1,0 +1,10 @@
+{
+  "namespace": "GeeEm",
+  "name": "SteamMultiplayer",
+  "description": "WIP mod for Steam multiplayer",
+  "version_number": "0.0.1",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100"
+  ],
+  "website_url": ""
+}
